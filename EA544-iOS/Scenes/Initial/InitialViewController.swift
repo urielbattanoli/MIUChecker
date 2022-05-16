@@ -47,7 +47,11 @@ final class InitialViewController: AppViewController {
 // MARK: - InitialViewModelDelegate
 extension InitialViewController: InitialViewModelDelegate {
     
-    func openHome() {
+    func openCheckerHome() {
+        ScannerViewController.present(in: self, viewModel: ScannerViewModel())
+    }
+    
+    func openMemberHome() {
         
     }
     

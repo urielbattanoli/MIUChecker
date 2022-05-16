@@ -22,6 +22,10 @@
 		BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */; };
 		BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E242832EA8500A8F7D3 /* MainButton.swift */; };
 		BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */; };
+		BE6A8E2C2832F47900A8F7D3 /* ScannerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E2A2832F47900A8F7D3 /* ScannerViewController.swift */; };
+		BE6A8E2D2832F47900A8F7D3 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */; };
+		BE6A8E2F2832FAF200A8F7D3 /* UICameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E2E2832FAF200A8F7D3 /* UICameraPreviewView.swift */; };
+		BE6A8E382833038B00A8F7D3 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */; };
 		BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */; };
 		BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */; };
 		BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */; };
@@ -54,6 +58,10 @@
 		BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BE6A8E242832EA8500A8F7D3 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
 		BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
+		BE6A8E2A2832F47900A8F7D3 /* ScannerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewController.swift; sourceTree = "<group>"; };
+		BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
+		BE6A8E2E2832FAF200A8F7D3 /* UICameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICameraPreviewView.swift; sourceTree = "<group>"; };
+		BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
 		BE6F20A02832AB8500DBDE1F /* EA544-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EA544-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -113,6 +121,7 @@
 		BE6A8E0F2832E4B300A8F7D3 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E302832FC8A00A8F7D3 /* CameraPreview */,
 				BE6A8E232832EA7900A8F7D3 /* Buttons */,
 				BE6A8E102832E4D300A8F7D3 /* InputView */,
 			);
@@ -144,6 +153,40 @@
 				BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		BE6A8E282832F3DE00A8F7D3 /* CheckerHome */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E292832F45D00A8F7D3 /* Scanner */,
+			);
+			path = CheckerHome;
+			sourceTree = "<group>";
+		};
+		BE6A8E292832F45D00A8F7D3 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E362833037F00A8F7D3 /* ViewModel */,
+				BE6A8E2A2832F47900A8F7D3 /* ScannerViewController.swift */,
+				BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
+		BE6A8E302832FC8A00A8F7D3 /* CameraPreview */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E2E2832FAF200A8F7D3 /* UICameraPreviewView.swift */,
+			);
+			path = CameraPreview;
+			sourceTree = "<group>";
+		};
+		BE6A8E362833037F00A8F7D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		BE6F20972832AB8500DBDE1F = {
@@ -225,6 +268,7 @@
 		BED05E082832B79500493EBF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E282832F3DE00A8F7D3 /* CheckerHome */,
 				BED05E092832B79F00493EBF /* Initial */,
 				BE6A8E012832DB8900A8F7D3 /* Login */,
 			);
@@ -321,6 +365,7 @@
 				BE6A8E052832DD3100A8F7D3 /* LoginViewController.xib in Resources */,
 				BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */,
 				BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */,
+				BE6A8E2D2832F47900A8F7D3 /* ScannerViewController.xib in Resources */,
 				BED05E0D2832B7D200493EBF /* InitialViewController.xib in Resources */,
 				BE6A8E152832E4EC00A8F7D3 /* InputView.xib in Resources */,
 			);
@@ -380,6 +425,7 @@
 				BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */,
 				BE6A8E142832E4EC00A8F7D3 /* InputView.swift in Sources */,
 				BED05E0F2832B7F100493EBF /* InitialViewModel.swift in Sources */,
+				BE6A8E382833038B00A8F7D3 /* ScannerViewModel.swift in Sources */,
 				BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */,
 				BE6A8E1C2832E56800A8F7D3 /* NibRegistrationView.swift in Sources */,
 				BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */,
@@ -391,6 +437,8 @@
 				BED05E022832B42E00493EBF /* API+Request.swift in Sources */,
 				BE6A8E1F2832E56800A8F7D3 /* UITextFieldPadding.swift in Sources */,
 				BED05E002832B40300493EBF /* API+Configuration.swift in Sources */,
+				BE6A8E2F2832FAF200A8F7D3 /* UICameraPreviewView.swift in Sources */,
+				BE6A8E2C2832F47900A8F7D3 /* ScannerViewController.swift in Sources */,
 				BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */,
 				BED05DFE2832B3C300493EBF /* API.swift in Sources */,
 				BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */,

@@ -9,7 +9,8 @@ import Foundation
 
 protocol InitialViewModelDelegate: AppViewModelDelegate {
     
-    func openHome()
+    func openCheckerHome()
+    func openMemberHome()
     func openLogin()
 }
 
