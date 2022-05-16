@@ -8,6 +8,20 @@
 
 /* Begin PBXBuildFile section */
 		B7A872366C3BC43B62362860 /* Pods_EA544_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642E4A4007C4C1D2F0AABD1F /* Pods_EA544_iOS.framework */; };
+		BE6A8E042832DD3100A8F7D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */; };
+		BE6A8E052832DD3100A8F7D3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */; };
+		BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E0B2832DD7500A8F7D3 /* LoginViewModel.swift */; };
+		BE6A8E0E2832DE9100A8F7D3 /* AppViewModelDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E0D2832DE9100A8F7D3 /* AppViewModelDelegate.swift */; };
+		BE6A8E142832E4EC00A8F7D3 /* InputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E122832E4EC00A8F7D3 /* InputView.swift */; };
+		BE6A8E152832E4EC00A8F7D3 /* InputView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E132832E4EC00A8F7D3 /* InputView.xib */; };
+		BE6A8E1B2832E56800A8F7D3 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E162832E56700A8F7D3 /* Utils.swift */; };
+		BE6A8E1C2832E56800A8F7D3 /* NibRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E172832E56800A8F7D3 /* NibRegistrationView.swift */; };
+		BE6A8E1D2832E56800A8F7D3 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E182832E56800A8F7D3 /* StringExtension.swift */; };
+		BE6A8E1E2832E56800A8F7D3 /* NibDesignable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E192832E56800A8F7D3 /* NibDesignable.swift */; };
+		BE6A8E1F2832E56800A8F7D3 /* UITextFieldPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E1A2832E56800A8F7D3 /* UITextFieldPadding.swift */; };
+		BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */; };
+		BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E242832EA8500A8F7D3 /* MainButton.swift */; };
+		BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */; };
 		BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */; };
 		BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */; };
 		BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */; };
@@ -26,6 +40,20 @@
 /* Begin PBXFileReference section */
 		642E4A4007C4C1D2F0AABD1F /* Pods_EA544_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EA544_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		920F2188CCBED7AA2B71C79B /* Pods-EA544-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EA544-iOS.release.xcconfig"; path = "Target Support Files/Pods-EA544-iOS/Pods-EA544-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
+		BE6A8E0B2832DD7500A8F7D3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		BE6A8E0D2832DE9100A8F7D3 /* AppViewModelDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewModelDelegate.swift; sourceTree = "<group>"; };
+		BE6A8E122832E4EC00A8F7D3 /* InputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InputView.swift; sourceTree = "<group>"; };
+		BE6A8E132832E4EC00A8F7D3 /* InputView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = InputView.xib; sourceTree = "<group>"; };
+		BE6A8E162832E56700A8F7D3 /* Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
+		BE6A8E172832E56800A8F7D3 /* NibRegistrationView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibRegistrationView.swift; sourceTree = "<group>"; };
+		BE6A8E182832E56800A8F7D3 /* StringExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
+		BE6A8E192832E56800A8F7D3 /* NibDesignable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NibDesignable.swift; sourceTree = "<group>"; };
+		BE6A8E1A2832E56800A8F7D3 /* UITextFieldPadding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextFieldPadding.swift; sourceTree = "<group>"; };
+		BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
+		BE6A8E242832EA8500A8F7D3 /* MainButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainButton.swift; sourceTree = "<group>"; };
+		BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CancelButton.swift; sourceTree = "<group>"; };
 		BE6F20A02832AB8500DBDE1F /* EA544-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EA544-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +92,60 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE6A8E012832DB8900A8F7D3 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E062832DD4000A8F7D3 /* ViewModel */,
+				BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */,
+				BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BE6A8E062832DD4000A8F7D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E0B2832DD7500A8F7D3 /* LoginViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BE6A8E0F2832E4B300A8F7D3 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E232832EA7900A8F7D3 /* Buttons */,
+				BE6A8E102832E4D300A8F7D3 /* InputView */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BE6A8E102832E4D300A8F7D3 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E122832E4EC00A8F7D3 /* InputView.swift */,
+				BE6A8E132832E4EC00A8F7D3 /* InputView.xib */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		BE6A8E222832E5F200A8F7D3 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E182832E56800A8F7D3 /* StringExtension.swift */,
+				BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		BE6A8E232832EA7900A8F7D3 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E242832EA8500A8F7D3 /* MainButton.swift */,
+				BE6A8E262832EC7300A8F7D3 /* CancelButton.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		BE6F20972832AB8500DBDE1F = {
 			isa = PBXGroup;
 			children = (
@@ -85,11 +167,12 @@
 		BE6F20A22832AB8500DBDE1F /* EA544-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E0F2832E4B300A8F7D3 /* Components */,
+				BED05DF72832B2A600493EBF /* MainClasses */,
+				BED05DFC2832B3B400493EBF /* Networking */,
+				BED05DF62832B21400493EBF /* Resources */,
 				BED05E082832B79500493EBF /* Scenes */,
 				BED05E052832B55A00493EBF /* Utils */,
-				BED05DFC2832B3B400493EBF /* Networking */,
-				BED05DF72832B2A600493EBF /* MainClasses */,
-				BED05DF62832B21400493EBF /* Resources */,
 			);
 			path = "EA544-iOS";
 			sourceTree = "<group>";
@@ -99,8 +182,8 @@
 			children = (
 				BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */,
 				BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */,
-				BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */,
 				BE6F20B12832AB8700DBDE1F /* Info.plist */,
+				BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -108,8 +191,9 @@
 		BED05DF72832B2A600493EBF /* MainClasses */ = {
 			isa = PBXGroup;
 			children = (
-				BED05DF82832B2CB00493EBF /* AppViewController.swift */,
 				BED05DFA2832B38500493EBF /* AppNavigationController.swift */,
+				BED05DF82832B2CB00493EBF /* AppViewController.swift */,
+				BE6A8E0D2832DE9100A8F7D3 /* AppViewModelDelegate.swift */,
 			);
 			path = MainClasses;
 			sourceTree = "<group>";
@@ -128,7 +212,12 @@
 		BED05E052832B55A00493EBF /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E222832E5F200A8F7D3 /* Extensions */,
 				BED05E062832B56400493EBF /* Logger.swift */,
+				BE6A8E192832E56800A8F7D3 /* NibDesignable.swift */,
+				BE6A8E172832E56800A8F7D3 /* NibRegistrationView.swift */,
+				BE6A8E1A2832E56800A8F7D3 /* UITextFieldPadding.swift */,
+				BE6A8E162832E56700A8F7D3 /* Utils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -137,6 +226,7 @@
 			isa = PBXGroup;
 			children = (
 				BED05E092832B79F00493EBF /* Initial */,
+				BE6A8E012832DB8900A8F7D3 /* Login */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -228,9 +318,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6A8E052832DD3100A8F7D3 /* LoginViewController.xib in Resources */,
 				BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */,
 				BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */,
 				BED05E0D2832B7D200493EBF /* InitialViewController.xib in Resources */,
+				BE6A8E152832E4EC00A8F7D3 /* InputView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,15 +376,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED05DFB2832B38500493EBF /* AppNavigationController.swift in Sources */,
+				BE6A8E1E2832E56800A8F7D3 /* NibDesignable.swift in Sources */,
+				BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */,
+				BE6A8E142832E4EC00A8F7D3 /* InputView.swift in Sources */,
 				BED05E0F2832B7F100493EBF /* InitialViewModel.swift in Sources */,
+				BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */,
+				BE6A8E1C2832E56800A8F7D3 /* NibRegistrationView.swift in Sources */,
 				BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */,
+				BE6A8E0E2832DE9100A8F7D3 /* AppViewModelDelegate.swift in Sources */,
+				BE6A8E1B2832E56800A8F7D3 /* Utils.swift in Sources */,
 				BED05E042832B43900493EBF /* API+Requester.swift in Sources */,
+				BE6A8E1D2832E56800A8F7D3 /* StringExtension.swift in Sources */,
 				BED05E0C2832B7D200493EBF /* InitialViewController.swift in Sources */,
 				BED05E022832B42E00493EBF /* API+Request.swift in Sources */,
+				BE6A8E1F2832E56800A8F7D3 /* UITextFieldPadding.swift in Sources */,
 				BED05E002832B40300493EBF /* API+Configuration.swift in Sources */,
+				BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */,
 				BED05DFE2832B3C300493EBF /* API.swift in Sources */,
+				BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */,
 				BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */,
 				BED05E072832B56400493EBF /* Logger.swift in Sources */,
+				BE6A8E042832DD3100A8F7D3 /* LoginViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

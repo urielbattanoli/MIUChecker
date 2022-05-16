@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="EA544_iOS" customModuleProvider="target">
+            <connections>
+                <outlet property="emailInputView" destination="LPv-oT-BYq" id="iJq-v6-RsY"/>
+                <outlet property="loginButton" destination="XwH-uP-haS" id="t0g-MA-5nc"/>
+                <outlet property="passwordInputView" destination="e7a-Cd-G1d" id="4Xd-e9-doL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="Sqd-WM-COq">
+                    <rect key="frame" x="16" y="76" width="382" height="176"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="LPv-oT-BYq" customClass="InputView" customModule="EA544_iOS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                        <view contentMode="scaleToFill" placeholderIntrinsicWidth="382" placeholderIntrinsicHeight="80" translatesAutoresizingMaskIntoConstraints="NO" id="e7a-Cd-G1d" customClass="InputView" customModule="EA544_iOS" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="96" width="382" height="80"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        </view>
+                    </subviews>
+                </stackView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-uP-haS" customClass="MainButton" customModule="EA544_iOS" customModuleProvider="target">
+                    <rect key="frame" x="16" y="778" width="382" height="48"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="48" id="i3F-lj-DIv"/>
+                    </constraints>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" title="Button"/>
+                    <connections>
+                        <action selector="loginTouched:" destination="-1" eventType="touchUpInside" id="4oz-iw-vM5"/>
+                    </connections>
+                </button>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Sqd-WM-COq" secondAttribute="trailing" constant="16" id="4gd-jf-DrR"/>
+                <constraint firstItem="Sqd-WM-COq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="CIx-aI-gFs"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XwH-uP-haS" secondAttribute="trailing" constant="16" id="Oer-xt-DSv"/>
+                <constraint firstItem="XwH-uP-haS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ax3-lJ-Ksd"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XwH-uP-haS" secondAttribute="bottom" constant="36" id="jaL-ds-6GA"/>
+                <constraint firstItem="Sqd-WM-COq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="lCL-6c-eEX"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

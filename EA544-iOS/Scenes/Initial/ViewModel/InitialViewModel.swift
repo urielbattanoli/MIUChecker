@@ -7,7 +7,7 @@
 
 import Foundation
 
-protocol InitialViewModelDelegate: AnyObject {
+protocol InitialViewModelDelegate: AppViewModelDelegate {
     
     func openHome()
     func openLogin()
@@ -15,6 +15,12 @@ protocol InitialViewModelDelegate: AnyObject {
 
 final class InitialViewModel {
     
-    weak var delegate: InitialViewModelDelegate?
+    weak var view: InitialViewModelDelegate?
     
+    func route() {
+        view?.openLogin()
+    }
+    
+    func logout() {
+    }
 }

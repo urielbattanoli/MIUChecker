@@ -18,11 +18,29 @@ final class InitialViewController: AppViewController {
     convenience init(viewModel: InitialViewModel) {
         self.init(nibName: .none, bundle: Bundle(for: Self.self))
         self.viewModel = viewModel
-        self.viewModel.delegate = self
+        self.viewModel.view = self
     }
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        listenLogout()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        viewModel.route()
+    }
+    
+    private func listenLogout() {
+        NotificationCenter
+            .default
+            .addObserver(forName: NSNotification.Name.init("application_logout"),
+                         object: nil,
+                         queue: .main,
+                         using: { [weak self] _ in
+                            self?.viewModel.logout()
+        })
     }
 }
 
@@ -34,6 +52,6 @@ extension InitialViewController: InitialViewModelDelegate {
     }
     
     func openLogin() {
-        
+        LoginViewController.present(in: self, viewModel: LoginViewModel())
     }
 }

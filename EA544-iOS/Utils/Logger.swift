@@ -7,12 +7,6 @@
 
 import Foundation
 
-extension String {
-    fileprivate var tabbedByNewLine: String {
-        return "\t\(self.split(separator: "\n").joined(separator: "\n\t"))"
-    }
-}
-
 public final class Logger {
     
     private static let logQueue =  DispatchQueue(label: "edu.miu.logger", attributes: .concurrent)
