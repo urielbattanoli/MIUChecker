@@ -36,5 +36,6 @@ final class CancelButton: UIButton {
         setTitleColor(.white, for: .normal)
         setCorner(6)
         titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        setTitle("Cancel", for: .normal)
     }
 }

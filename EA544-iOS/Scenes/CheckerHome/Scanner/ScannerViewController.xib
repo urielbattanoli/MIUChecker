@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ScannerViewController" customModule="EA544_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="badgesReadLabel" destination="983-xe-sUL" id="faj-12-6bg"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="viewCameraPreview" destination="DZ4-0X-3YO" id="c85-Nn-Fi7"/>
             </connections>
@@ -20,21 +21,39 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-0X-3YO" customClass="UICameraPreviewView" customModule="Flockr" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="241" width="414" height="414"/>
-                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OA8-U6-K23" customClass="UIRoundedView" customModule="EA544_iOS" customModuleProvider="target">
+                    <rect key="frame" x="57" y="298" width="300" height="300"/>
+                    <subviews>
+                        <view clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DZ4-0X-3YO" customClass="UICameraPreviewView" customModule="Flockr" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="0.0" width="300" height="300"/>
+                            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="300" id="NFT-d8-EWK"/>
+                                <constraint firstAttribute="width" secondItem="DZ4-0X-3YO" secondAttribute="height" multiplier="1:1" id="OmV-gX-GMa"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="DZ4-0X-3YO" secondAttribute="height" multiplier="1:1" id="OmV-gX-GMa"/>
+                        <constraint firstAttribute="bottom" secondItem="DZ4-0X-3YO" secondAttribute="bottom" id="Wyf-8j-zf6"/>
+                        <constraint firstItem="DZ4-0X-3YO" firstAttribute="top" secondItem="OA8-U6-K23" secondAttribute="top" id="bw3-Yk-G42"/>
+                        <constraint firstAttribute="trailing" secondItem="DZ4-0X-3YO" secondAttribute="trailing" id="fO6-ed-Dba"/>
+                        <constraint firstItem="DZ4-0X-3YO" firstAttribute="leading" secondItem="OA8-U6-K23" secondAttribute="leading" id="lJW-q6-SHJ"/>
                     </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="16"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
                 </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ready to scan the badge QRCode" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZWk-xo-evi">
-                    <rect key="frame" x="16" y="196.5" width="382" height="20.5"/>
+                    <rect key="frame" x="16" y="253.5" width="382" height="20.5"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="123 badges read today" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="983-xe-sUL">
-                    <rect key="frame" x="16" y="679" width="382" height="21"/>
+                    <rect key="frame" x="16" y="622" width="382" height="21"/>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -43,14 +62,13 @@
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="983-xe-sUL" firstAttribute="top" secondItem="DZ4-0X-3YO" secondAttribute="bottom" constant="24" id="5Wo-aR-kMd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="DZ4-0X-3YO" secondAttribute="trailing" id="6Jg-mo-7nt"/>
                 <constraint firstAttribute="trailing" secondItem="ZWk-xo-evi" secondAttribute="trailing" constant="16" id="6et-gy-ZFc"/>
                 <constraint firstItem="ZWk-xo-evi" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="EQ2-pB-0Ko"/>
-                <constraint firstItem="DZ4-0X-3YO" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Zgz-e8-Agr"/>
-                <constraint firstItem="DZ4-0X-3YO" firstAttribute="top" secondItem="ZWk-xo-evi" secondAttribute="bottom" constant="24" id="etk-q8-Mty"/>
+                <constraint firstItem="OA8-U6-K23" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FuT-a4-OIe"/>
+                <constraint firstItem="OA8-U6-K23" firstAttribute="top" secondItem="ZWk-xo-evi" secondAttribute="bottom" constant="24" id="Lt5-wz-DL0"/>
+                <constraint firstItem="OA8-U6-K23" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cqm-Ya-GDf"/>
+                <constraint firstItem="983-xe-sUL" firstAttribute="top" secondItem="OA8-U6-K23" secondAttribute="bottom" constant="24" id="fMf-0o-gvL"/>
                 <constraint firstItem="983-xe-sUL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jSp-q6-KbO"/>
-                <constraint firstItem="DZ4-0X-3YO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="xJR-PF-2Ky"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="983-xe-sUL" secondAttribute="trailing" constant="16" id="yvP-Io-eEu"/>
             </constraints>
             <point key="canvasLocation" x="139" y="103"/>

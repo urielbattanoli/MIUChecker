@@ -10,6 +10,7 @@ import UIKit
 
 protocol ScannerViewDelegate: AnyObject {
     var view: ScannerViewModelDelegate? { get set }
+    var dailyTotal: Int { get }
     
     func verifyCode(_ code: String)
 }
@@ -29,6 +30,7 @@ final class ScannerViewController: AppViewController {
     }
     
     @IBOutlet private var viewCameraPreview: UICameraPreviewView!
+    @IBOutlet private var badgesReadLabel: UILabel!
     
     private var captureSession: AVCaptureSession!
     private let viewModel: ScannerViewDelegate
@@ -47,6 +49,7 @@ final class ScannerViewController: AppViewController {
         super.viewDidLoad()
         
         setupCamera()
+        update()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -115,6 +118,10 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 
 // MARK: - ScannerViewModelDelegate
 extension ScannerViewController: ScannerViewModelDelegate {
+    
+    func update() {
+        badgesReadLabel.text = "\(viewModel.dailyTotal) badges read today"
+    }
     
     func runScanner() {
         if captureSession?.isRunning == false {

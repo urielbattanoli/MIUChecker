@@ -14,6 +14,10 @@ protocol MemberViewDelegate: AnyObject {
     var profileName: String { get }
     var profileId: String { get }
     var qrCodeImage: UIImage? { get }
+    var expDate: String { get }
+    var showQRCode: Bool { get }
+    
+    func checkIn()
 }
 
 final class MemberViewController: AppViewController {
@@ -33,7 +37,10 @@ final class MemberViewController: AppViewController {
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var profileNameLabel: UILabel!
     @IBOutlet private weak var profileIdLabel: UILabel!
+    @IBOutlet private weak var qrCodeBGView: UIView!
     @IBOutlet private weak var qrCodeImageView: UIImageView!
+    @IBOutlet private weak var buttonsStackView: UIStackView!
+    @IBOutlet private weak var expDateLabel: UILabel!
     
     private let viewModel: MemberViewDelegate
     
@@ -58,5 +65,17 @@ final class MemberViewController: AppViewController {
         profileNameLabel.text = viewModel.profileName
         profileIdLabel.text = viewModel.profileId
         qrCodeImageView.image = viewModel.qrCodeImage
+        expDateLabel.text = viewModel.expDate
+        qrCodeBGView.isHidden = !viewModel.showQRCode
+        buttonsStackView.isHidden = viewModel.showQRCode
+        view.backgroundColor = viewModel.showQRCode ? .white : .clear
+    }
+    
+    @IBAction private func confirmTouched(_ sender: UIButton) {
+        viewModel.checkIn()
+    }
+    
+    @IBAction private func cancelTouched(_ sender: UIButton) {
+        dismiss()
     }
 }

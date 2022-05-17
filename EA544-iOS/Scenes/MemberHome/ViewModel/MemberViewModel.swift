@@ -31,6 +31,16 @@ final class MemberViewModel: MemberViewDelegate {
         return QRCode.generate(from: "student id")
     }
     
+    var expDate: String {
+        return "07/10/2022"
+    }
+    
+    var showQRCode: Bool { return true }
+    
+    func checkIn() {
+        
+    }
+    
     private func loadBadge() {
         
     }
