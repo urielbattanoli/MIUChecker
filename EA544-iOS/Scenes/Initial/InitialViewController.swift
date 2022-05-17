@@ -52,7 +52,7 @@ extension InitialViewController: InitialViewModelDelegate {
     }
     
     func openMemberHome() {
-        
+        MemberViewController.present(in: self, viewModel: MemberViewModel())
     }
     
     func openLogin() {

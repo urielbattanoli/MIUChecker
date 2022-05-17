@@ -43,6 +43,6 @@ final class LoginViewModel: LoginViewDelegate {
     }
     
     func login() {
-        
+        guard isValid(showError: true) else { return }
     }
 }

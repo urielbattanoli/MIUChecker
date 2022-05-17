@@ -10,6 +10,8 @@ import Foundation
 public typealias JSON = [String : Any]
 
 public enum API<T: Codable> {
+    
+    case login
 }
 
 public struct AppError: Codable, Error, LocalizedError {

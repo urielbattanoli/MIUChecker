@@ -35,6 +35,7 @@ final class LoginViewController: AppViewController {
     @IBOutlet private weak var emailInputView: InputView!
     @IBOutlet private weak var passwordInputView: InputView!
     @IBOutlet private weak var loginButton: MainButton!
+    @IBOutlet private weak var bottomButtonConstraint: NSLayoutConstraint!
     
     private let viewModel: LoginViewDelegate
     
@@ -69,6 +70,7 @@ final class LoginViewController: AppViewController {
         passwordInputView.delegate = self
         loginButton.setTitle("Login", for: .normal)
         changeButtonState()
+        startObservingKeyboard()
     }
     
     private func changeButtonState() {
@@ -86,6 +88,10 @@ final class LoginViewController: AppViewController {
         passwordInputView.hideErrorMessage()
         viewModel.password = passwordInputView.text ?? ""
         changeButtonState()
+    }
+    
+    @IBAction private func viewTouched(_ sender: UIControl) {
+        view.endEditing(true)
     }
     
     @IBAction private func loginTouched(_ sender: UIButton) {
@@ -116,5 +122,18 @@ extension LoginViewController: LoginViewModelDelegate {
     
     func showPasswordErrorMessage(_ message: String) {
         passwordInputView.showErrorMessage(message)
+    }
+}
+
+extension LoginViewController: KeyboardObserverDelegate {
+    
+    func keyboardWillShow(with frame: CGRect, animationOptions: UIView.AnimationOptions, animationDuration: TimeInterval) {
+        bottomButtonConstraint.constant = frame.height
+        view.layoutIfNeeded()
+    }
+    
+    func keyboardWillHide(with frame: CGRect, animationOptions: UIView.AnimationOptions, animationDuration: TimeInterval) {
+        bottomButtonConstraint.constant = 44
+        view.layoutIfNeeded()
     }
 }

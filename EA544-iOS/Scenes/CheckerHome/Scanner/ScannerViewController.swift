@@ -8,7 +8,7 @@
 import AVFoundation
 import UIKit
 
-protocol ScannerViewDelegate {
+protocol ScannerViewDelegate: AnyObject {
     var view: ScannerViewModelDelegate? { get set }
     
     func verifyCode(_ code: String)
@@ -18,9 +18,9 @@ final class ScannerViewController: AppViewController {
     
     static func present(in controller: UIViewController, viewModel: ScannerViewDelegate) {
         let view = ScannerViewController(viewModel: viewModel)
+        viewModel.view = view
         
         let navigation = AppNavigationController(rootViewController: view)
-        
         navigation.isNavigationBarHidden = true
         navigation.modalPresentationStyle = .fullScreen
         navigation.modalTransitionStyle = .crossDissolve
@@ -52,7 +52,7 @@ final class ScannerViewController: AppViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if (captureSession?.isRunning == false) {
+        if captureSession?.isRunning == false {
             captureSession.startRunning()
         }
     }
@@ -60,7 +60,7 @@ final class ScannerViewController: AppViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        if (captureSession?.isRunning == true) {
+        if captureSession?.isRunning == true {
             captureSession.stopRunning()
         }
     }
@@ -82,6 +82,7 @@ final class ScannerViewController: AppViewController {
         metadataOutput.metadataObjectTypes = [.qr]
         
         viewCameraPreview.previewLayer.session = captureSession
+        viewCameraPreview.previewLayer.videoGravity = .resizeAspectFill
         captureSession.startRunning()
     }
     
@@ -104,14 +105,20 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         captureSession.stopRunning()
-        
-        if let metadataObject = metadataObjects.first {
-            guard let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject else { return }
-            guard let stringValue = readableObject.stringValue else { return }
-            AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-            found(code: stringValue)
+        guard let metadataObject = metadataObjects.first,
+              let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
+              let stringValue = readableObject.stringValue else { return }
+        AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
+        found(code: stringValue)
+    }
+}
+
+// MARK: - ScannerViewModelDelegate
+extension ScannerViewController: ScannerViewModelDelegate {
+    
+    func runScanner() {
+        if captureSession?.isRunning == false {
+            captureSession.startRunning()
         }
-        
-        dismiss(animated: true)
     }
 }

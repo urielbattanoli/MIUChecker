@@ -19,7 +19,7 @@ extension API {
     
     var path: String {
         switch self {
-        default: return ""
+        case .login: return ""
         }
     }
     

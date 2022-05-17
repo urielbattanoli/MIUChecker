@@ -11,6 +11,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginViewController" customModule="EA544_iOS" customModuleProvider="target">
             <connections>
+                <outlet property="bottomButtonConstraint" destination="jaL-ds-6GA" id="Uup-we-TfN"/>
                 <outlet property="emailInputView" destination="LPv-oT-BYq" id="iJq-v6-RsY"/>
                 <outlet property="loginButton" destination="XwH-uP-haS" id="t0g-MA-5nc"/>
                 <outlet property="passwordInputView" destination="e7a-Cd-G1d" id="4Xd-e9-doL"/>
@@ -18,7 +19,7 @@
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT" customClass="UIControl">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -36,7 +37,7 @@
                     </subviews>
                 </stackView>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XwH-uP-haS" customClass="MainButton" customModule="EA544_iOS" customModuleProvider="target">
-                    <rect key="frame" x="16" y="778" width="382" height="48"/>
+                    <rect key="frame" x="16" y="770" width="382" height="48"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="48" id="i3F-lj-DIv"/>
                     </constraints>
@@ -54,9 +55,12 @@
                 <constraint firstItem="Sqd-WM-COq" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="CIx-aI-gFs"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="XwH-uP-haS" secondAttribute="trailing" constant="16" id="Oer-xt-DSv"/>
                 <constraint firstItem="XwH-uP-haS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="ax3-lJ-Ksd"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XwH-uP-haS" secondAttribute="bottom" constant="36" id="jaL-ds-6GA"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="XwH-uP-haS" secondAttribute="bottom" constant="44" id="jaL-ds-6GA"/>
                 <constraint firstItem="Sqd-WM-COq" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="32" id="lCL-6c-eEX"/>
             </constraints>
+            <connections>
+                <action selector="viewTouched:" destination="-1" eventType="touchUpInside" id="nMa-LK-Pxq"/>
+            </connections>
             <point key="canvasLocation" x="137.68115942028987" y="122.54464285714285"/>
         </view>
     </objects>

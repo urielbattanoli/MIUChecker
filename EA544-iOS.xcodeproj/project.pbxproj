@@ -26,6 +26,13 @@
 		BE6A8E2D2832F47900A8F7D3 /* ScannerViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */; };
 		BE6A8E2F2832FAF200A8F7D3 /* UICameraPreviewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E2E2832FAF200A8F7D3 /* UICameraPreviewView.swift */; };
 		BE6A8E382833038B00A8F7D3 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */; };
+		BE6A8E3C2833091A00A8F7D3 /* MemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E3A2833091A00A8F7D3 /* MemberViewController.swift */; };
+		BE6A8E3D2833091A00A8F7D3 /* MemberViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E3B2833091A00A8F7D3 /* MemberViewController.xib */; };
+		BE6A8E402833096B00A8F7D3 /* MemberViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E3F2833096B00A8F7D3 /* MemberViewModel.swift */; };
+		BE6A8E4228330C0800A8F7D3 /* UIRoundedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4128330C0800A8F7D3 /* UIRoundedView.swift */; };
+		BE6A8E4728333A7100A8F7D3 /* KeyboardObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */; };
+		BE6A8E4928334D8700A8F7D3 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */; };
+		BE6A8E4B2833503900A8F7D3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4A2833503900A8F7D3 /* UIImageView.swift */; };
 		BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */; };
 		BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */; };
 		BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */; };
@@ -62,6 +69,13 @@
 		BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ScannerViewController.xib; sourceTree = "<group>"; };
 		BE6A8E2E2832FAF200A8F7D3 /* UICameraPreviewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICameraPreviewView.swift; sourceTree = "<group>"; };
 		BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		BE6A8E3A2833091A00A8F7D3 /* MemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewController.swift; sourceTree = "<group>"; };
+		BE6A8E3B2833091A00A8F7D3 /* MemberViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberViewController.xib; sourceTree = "<group>"; };
+		BE6A8E3F2833096B00A8F7D3 /* MemberViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberViewModel.swift; sourceTree = "<group>"; };
+		BE6A8E4128330C0800A8F7D3 /* UIRoundedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIRoundedView.swift; sourceTree = "<group>"; };
+		BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserverDelegate.swift; sourceTree = "<group>"; };
+		BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
+		BE6A8E4A2833503900A8F7D3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
 		BE6F20A02832AB8500DBDE1F /* EA544-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EA544-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -142,6 +156,7 @@
 			children = (
 				BE6A8E182832E56800A8F7D3 /* StringExtension.swift */,
 				BE6A8E202832E5EE00A8F7D3 /* ViewExtension.swift */,
+				BE6A8E4A2833503900A8F7D3 /* UIImageView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -185,6 +200,24 @@
 			isa = PBXGroup;
 			children = (
 				BE6A8E372833038B00A8F7D3 /* ScannerViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BE6A8E392833090900A8F7D3 /* MemberHome */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E3E2833095E00A8F7D3 /* ViewModel */,
+				BE6A8E3A2833091A00A8F7D3 /* MemberViewController.swift */,
+				BE6A8E3B2833091A00A8F7D3 /* MemberViewController.xib */,
+			);
+			path = MemberHome;
+			sourceTree = "<group>";
+		};
+		BE6A8E3E2833095E00A8F7D3 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E3F2833096B00A8F7D3 /* MemberViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -259,8 +292,11 @@
 				BED05E062832B56400493EBF /* Logger.swift */,
 				BE6A8E192832E56800A8F7D3 /* NibDesignable.swift */,
 				BE6A8E172832E56800A8F7D3 /* NibRegistrationView.swift */,
+				BE6A8E4128330C0800A8F7D3 /* UIRoundedView.swift */,
 				BE6A8E1A2832E56800A8F7D3 /* UITextFieldPadding.swift */,
 				BE6A8E162832E56700A8F7D3 /* Utils.swift */,
+				BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */,
+				BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -268,6 +304,7 @@
 		BED05E082832B79500493EBF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E392833090900A8F7D3 /* MemberHome */,
 				BE6A8E282832F3DE00A8F7D3 /* CheckerHome */,
 				BED05E092832B79F00493EBF /* Initial */,
 				BE6A8E012832DB8900A8F7D3 /* Login */,
@@ -368,6 +405,7 @@
 				BE6A8E2D2832F47900A8F7D3 /* ScannerViewController.xib in Resources */,
 				BED05E0D2832B7D200493EBF /* InitialViewController.xib in Resources */,
 				BE6A8E152832E4EC00A8F7D3 /* InputView.xib in Resources */,
+				BE6A8E3D2833091A00A8F7D3 /* MemberViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -427,11 +465,15 @@
 				BED05E0F2832B7F100493EBF /* InitialViewModel.swift in Sources */,
 				BE6A8E382833038B00A8F7D3 /* ScannerViewModel.swift in Sources */,
 				BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */,
+				BE6A8E4728333A7100A8F7D3 /* KeyboardObserverDelegate.swift in Sources */,
 				BE6A8E1C2832E56800A8F7D3 /* NibRegistrationView.swift in Sources */,
 				BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */,
 				BE6A8E0E2832DE9100A8F7D3 /* AppViewModelDelegate.swift in Sources */,
 				BE6A8E1B2832E56800A8F7D3 /* Utils.swift in Sources */,
 				BED05E042832B43900493EBF /* API+Requester.swift in Sources */,
+				BE6A8E4928334D8700A8F7D3 /* QRCodeGenerator.swift in Sources */,
+				BE6A8E4B2833503900A8F7D3 /* UIImageView.swift in Sources */,
+				BE6A8E3C2833091A00A8F7D3 /* MemberViewController.swift in Sources */,
 				BE6A8E1D2832E56800A8F7D3 /* StringExtension.swift in Sources */,
 				BED05E0C2832B7D200493EBF /* InitialViewController.swift in Sources */,
 				BED05E022832B42E00493EBF /* API+Request.swift in Sources */,
@@ -439,12 +481,14 @@
 				BED05E002832B40300493EBF /* API+Configuration.swift in Sources */,
 				BE6A8E2F2832FAF200A8F7D3 /* UICameraPreviewView.swift in Sources */,
 				BE6A8E2C2832F47900A8F7D3 /* ScannerViewController.swift in Sources */,
+				BE6A8E4228330C0800A8F7D3 /* UIRoundedView.swift in Sources */,
 				BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */,
 				BED05DFE2832B3C300493EBF /* API.swift in Sources */,
 				BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */,
 				BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */,
 				BED05E072832B56400493EBF /* Logger.swift in Sources */,
 				BE6A8E042832DD3100A8F7D3 /* LoginViewController.swift in Sources */,
+				BE6A8E402833096B00A8F7D3 /* MemberViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -587,11 +631,15 @@
 				DEVELOPMENT_TEAM = DXGTJAG2UY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EA544-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need this authorization";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -616,11 +664,15 @@
 				DEVELOPMENT_TEAM = DXGTJAG2UY;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EA544-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_NSCameraUsageDescription = "We need this authorization";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = "";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = UIInterfaceOrientationPortrait;
+				INFOPLIST_KEY_UIUserInterfaceStyle = Light;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
