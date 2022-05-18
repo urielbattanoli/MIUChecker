@@ -7,22 +7,23 @@
 
 import Foundation
 
-public typealias JSON = [String : Any]
+typealias JSON = [String : Any]
 
-public enum API<T: Codable> {
+enum API<T: Codable> {
     
     case login
     case members(id: String)
+    case checkIn(id: String)
 }
 
 public struct AppError: Codable, Error, LocalizedError {
     
     public static var unknown: AppError {
-        return AppError(code: -1, error: "Unknown")
+        return AppError(status: -1, error: "Unknown")
     }
     
-    public let code: Int
-    public let error: String
+    public let status: Int
+    private let error: String
     
     public var errorDescription: String? {
         return error
@@ -34,3 +35,5 @@ extension Error {
         self as? AppError
     }
 }
+
+struct EmptyResult: Codable { }

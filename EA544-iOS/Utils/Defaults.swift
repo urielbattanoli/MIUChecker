@@ -13,6 +13,12 @@ public final class Defaults {
     
     @UserDefault("token", defaultValue: nil)
     public var token: String?
+    
+    @UserDefault("location_id", defaultValue: nil)
+    public var location_id: String?
+    
+    @UserDefault("plan_id", defaultValue: nil)
+    public var plan_id: String?
 }
 
 @propertyWrapper

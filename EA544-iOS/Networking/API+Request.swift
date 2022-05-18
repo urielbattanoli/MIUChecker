@@ -22,12 +22,13 @@ extension API {
         switch self {
         case .login: return "auth/realms/ea544/protocol/openid-connect/token"
         case .members(let id): return "members/\(id)"
+        case .checkIn(let id): return "members/\(id)/checkin"
         }
     }
     
     var method: HTTPMethod {
         switch self {
-        case .login: return .post
+        case .login, .checkIn: return .post
         default: return .get
         }
     }

@@ -10,7 +10,7 @@ import UIKit
 protocol ScannerViewModelDelegate: AppViewModelDelegate {
     func update()
     func runScanner()
-    func presentMember(_ member: Member)
+    func presentMember(_ viewModel: MemberViewModel)
 }
 
 final class ScannerViewModel: ScannerViewDelegate {
@@ -26,7 +26,8 @@ final class ScannerViewModel: ScannerViewDelegate {
             self?.view?.stopLoading(completion: {
                 switch response {
                 case .success(let member):
-                    self?.view?.presentMember(member)
+                    let viewModel = MemberViewModel(member: member, delegate: self)
+                    self?.view?.presentMember(viewModel)
                 case .failure(let error):
                     let action = UIAlertAction(title: "Ok", style: .default) { _ in
                         self?.view?.runScanner()
@@ -39,5 +40,18 @@ final class ScannerViewModel: ScannerViewDelegate {
                 }
             })
         })
+    }
+}
+
+// MARK: - CheckInDelegate
+extension ScannerViewModel: CheckInDelegate {
+    
+    func didCheckIn() {
+        dailyTotal += 1
+        view?.update()
+    }
+    
+    func runScanner() {
+        view?.runScanner()
     }
 }

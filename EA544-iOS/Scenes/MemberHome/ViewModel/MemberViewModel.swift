@@ -11,14 +11,25 @@ protocol MemberViewModelDelegate: AppViewModelDelegate {
     
 }
 
+protocol CheckInDelegate: AnyObject {
+    func didCheckIn()
+    func runScanner()
+}
+
 final class MemberViewModel: MemberViewDelegate {
     
     weak var view: AppViewModelDelegate?
     
     private let member: Member
+    private weak var delegate: CheckInDelegate?
     
-    init(member: Member) {
+    init(member: Member, delegate: CheckInDelegate? = nil) {
         self.member = member
+        self.delegate = delegate
+    }
+    
+    deinit {
+        delegate?.runScanner()
     }
     
     var profileImageUrl: String {
@@ -44,6 +55,18 @@ final class MemberViewModel: MemberViewDelegate {
     var showQRCode: Bool { return member.id == Member.current?.id }
     
     func checkIn() {
-        
+        guard let locationId = Defaults.shared.location_id,
+                let planId = Defaults.shared.plan_id else { return }
+        view?.startLoading(completion: nil)
+        API<EmptyResult>.checkIn(id: member.id).request(params: ["locationId": locationId, "planId": planId], completion: { [weak self] response in
+            self?.view?.stopLoading(completion: {
+                if case .failure(let error) = response {
+                    self?.view?.error(message: error.localizedDescription)
+                    return
+                }
+                self?.delegate?.didCheckIn()
+                self?.view?.dismiss()
+            })
+        })
     }
 }

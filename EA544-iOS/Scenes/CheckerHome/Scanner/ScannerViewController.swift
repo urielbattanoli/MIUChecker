@@ -55,9 +55,7 @@ final class ScannerViewController: AppViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if captureSession?.isRunning == false {
-            captureSession.startRunning()
-        }
+        runScanner()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -129,7 +127,7 @@ extension ScannerViewController: ScannerViewModelDelegate {
         }
     }
     
-    func presentMember(_ member: Member) {
-        MemberViewController.present(in: self, viewModel: MemberViewModel(member: member))
+    func presentMember(_ viewModel: MemberViewModel) {
+        MemberViewController.present(in: self, viewModel: viewModel)
     }
 }

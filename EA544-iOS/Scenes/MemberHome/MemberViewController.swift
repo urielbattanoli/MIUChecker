@@ -24,7 +24,6 @@ final class MemberViewController: AppViewController {
     
     static func present(in controller: UIViewController, viewModel: MemberViewDelegate) {
         let view = MemberViewController(viewModel: viewModel)
-        view.scannerVC = controller as? ScannerViewController
         viewModel.view = view
         
         let navigation = AppNavigationController(rootViewController: view)
@@ -45,7 +44,6 @@ final class MemberViewController: AppViewController {
     @IBOutlet private weak var expDateLabel: UILabel!
     
     private let viewModel: MemberViewDelegate
-    private weak var scannerVC: ScannerViewController?
     
     private init(viewModel: MemberViewDelegate) {
         self.viewModel = viewModel
@@ -61,12 +59,6 @@ final class MemberViewController: AppViewController {
         super.viewDidLoad()
         
         setupView()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        super.viewDidDisappear(animated)
-        
-        scannerVC?.runScanner()
     }
     
     private func setupView() {
