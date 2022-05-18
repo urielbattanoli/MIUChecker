@@ -12,6 +12,7 @@ public typealias JSON = [String : Any]
 public enum API<T: Codable> {
     
     case login
+    case members(id: String)
 }
 
 public struct AppError: Codable, Error, LocalizedError {

@@ -33,6 +33,10 @@
 		BE6A8E4728333A7100A8F7D3 /* KeyboardObserverDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */; };
 		BE6A8E4928334D8700A8F7D3 /* QRCodeGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */; };
 		BE6A8E4B2833503900A8F7D3 /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E4A2833503900A8F7D3 /* UIImageView.swift */; };
+		BE6A8E53283426D600A8F7D3 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E52283426D600A8F7D3 /* Member.swift */; };
+		BE6A8E552834332800A8F7D3 /* Authorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E542834332800A8F7D3 /* Authorization.swift */; };
+		BE6A8E5728343A5900A8F7D3 /* Defaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E5628343A5900A8F7D3 /* Defaults.swift */; };
+		BE6A8E5928343C5E00A8F7D3 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E5828343C5E00A8F7D3 /* Badge.swift */; };
 		BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */; };
 		BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */; };
 		BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */; };
@@ -76,6 +80,10 @@
 		BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardObserverDelegate.swift; sourceTree = "<group>"; };
 		BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QRCodeGenerator.swift; sourceTree = "<group>"; };
 		BE6A8E4A2833503900A8F7D3 /* UIImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		BE6A8E52283426D600A8F7D3 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
+		BE6A8E542834332800A8F7D3 /* Authorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Authorization.swift; sourceTree = "<group>"; };
+		BE6A8E5628343A5900A8F7D3 /* Defaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defaults.swift; sourceTree = "<group>"; };
+		BE6A8E5828343C5E00A8F7D3 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		BE6F20A02832AB8500DBDE1F /* EA544-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "EA544-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -222,6 +230,16 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		BE6A8E51283426C000A8F7D3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BE6A8E52283426D600A8F7D3 /* Member.swift */,
+				BE6A8E5828343C5E00A8F7D3 /* Badge.swift */,
+				BE6A8E542834332800A8F7D3 /* Authorization.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BE6F20972832AB8500DBDE1F = {
 			isa = PBXGroup;
 			children = (
@@ -243,6 +261,7 @@
 		BE6F20A22832AB8500DBDE1F /* EA544-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				BE6A8E51283426C000A8F7D3 /* Model */,
 				BE6A8E0F2832E4B300A8F7D3 /* Components */,
 				BED05DF72832B2A600493EBF /* MainClasses */,
 				BED05DFC2832B3B400493EBF /* Networking */,
@@ -297,6 +316,7 @@
 				BE6A8E162832E56700A8F7D3 /* Utils.swift */,
 				BE6A8E4628333A7100A8F7D3 /* KeyboardObserverDelegate.swift */,
 				BE6A8E4828334D8700A8F7D3 /* QRCodeGenerator.swift */,
+				BE6A8E5628343A5900A8F7D3 /* Defaults.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -468,14 +488,18 @@
 				BE6A8E4728333A7100A8F7D3 /* KeyboardObserverDelegate.swift in Sources */,
 				BE6A8E1C2832E56800A8F7D3 /* NibRegistrationView.swift in Sources */,
 				BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */,
+				BE6A8E53283426D600A8F7D3 /* Member.swift in Sources */,
+				BE6A8E5728343A5900A8F7D3 /* Defaults.swift in Sources */,
 				BE6A8E0E2832DE9100A8F7D3 /* AppViewModelDelegate.swift in Sources */,
 				BE6A8E1B2832E56800A8F7D3 /* Utils.swift in Sources */,
 				BED05E042832B43900493EBF /* API+Requester.swift in Sources */,
 				BE6A8E4928334D8700A8F7D3 /* QRCodeGenerator.swift in Sources */,
+				BE6A8E552834332800A8F7D3 /* Authorization.swift in Sources */,
 				BE6A8E4B2833503900A8F7D3 /* UIImageView.swift in Sources */,
 				BE6A8E3C2833091A00A8F7D3 /* MemberViewController.swift in Sources */,
 				BE6A8E1D2832E56800A8F7D3 /* StringExtension.swift in Sources */,
 				BED05E0C2832B7D200493EBF /* InitialViewController.swift in Sources */,
+				BE6A8E5928343C5E00A8F7D3 /* Badge.swift in Sources */,
 				BED05E022832B42E00493EBF /* API+Request.swift in Sources */,
 				BE6A8E1F2832E56800A8F7D3 /* UITextFieldPadding.swift in Sources */,
 				BED05E002832B40300493EBF /* API+Configuration.swift in Sources */,

@@ -51,8 +51,8 @@ extension InitialViewController: InitialViewModelDelegate {
         ScannerViewController.present(in: self, viewModel: ScannerViewModel())
     }
     
-    func openMemberHome() {
-        MemberViewController.present(in: self, viewModel: MemberViewModel())
+    func openMemberHome(_ member: Member) {
+        MemberViewController.present(in: self, viewModel: MemberViewModel(member: member))
     }
     
     func openLogin() {

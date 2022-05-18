@@ -44,5 +44,31 @@ final class LoginViewModel: LoginViewDelegate {
     
     func login() {
         guard isValid(showError: true) else { return }
+        view?.startLoading(completion: nil)
+        API<Authorization>.login.request(params: ["grant_type": "password", "username": email, "password": password], completion: { [weak self] response in
+            switch response {
+            case .success(let authorization):
+                self?.loadUser(token: authorization.access_token)
+            case .failure(let error):
+                self?.view?.stopLoading(completion: {
+                    self?.view?.error(message: error.localizedDescription)
+                })
+            }
+        })
+    }
+    
+    private func loadUser(token: String) {
+        Defaults.shared.token = "Bearer " + token
+        API<Member>.members(id: "62840a678c24ef569751ccc7").request(completion: { [weak self] response in
+            self?.view?.stopLoading(completion: {
+                switch response {
+                case .success(let member):
+                    Member.current = member
+                    self?.view?.dismiss()
+                case .failure(let error):
+                    self?.view?.error(message: error.localizedDescription)
+                }
+            })
+        })
     }
 }

@@ -10,7 +10,7 @@ import Foundation
 protocol InitialViewModelDelegate: AppViewModelDelegate {
     
     func openCheckerHome()
-    func openMemberHome()
+    func openMemberHome(_ member: Member)
     func openLogin()
 }
 
@@ -19,7 +19,17 @@ final class InitialViewModel {
     weak var view: InitialViewModelDelegate?
     
     func route() {
-        view?.openLogin()
+        view?.openCheckerHome()
+        return
+        guard let member = Member.current else {
+            view?.openLogin()
+            return
+        }
+        if member.isLocation {
+            view?.openCheckerHome()
+        } else {
+            view?.openMemberHome(member)
+        }
     }
     
     func logout() {

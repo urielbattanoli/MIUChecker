@@ -128,4 +128,8 @@ extension ScannerViewController: ScannerViewModelDelegate {
             captureSession.startRunning()
         }
     }
+    
+    func presentMember(_ member: Member) {
+        MemberViewController.present(in: self, viewModel: MemberViewModel(member: member))
+    }
 }

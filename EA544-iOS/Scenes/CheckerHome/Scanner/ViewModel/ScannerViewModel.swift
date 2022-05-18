@@ -10,6 +10,7 @@ import UIKit
 protocol ScannerViewModelDelegate: AppViewModelDelegate {
     func update()
     func runScanner()
+    func presentMember(_ member: Member)
 }
 
 final class ScannerViewModel: ScannerViewDelegate {
@@ -20,13 +21,23 @@ final class ScannerViewModel: ScannerViewDelegate {
     
     func verifyCode(_ code: String) {
         print(code)
-        let ok = UIAlertAction(title: "Ok", style: .default) { [weak self] _ in
-            self?.view?.runScanner()
-        }
-        view?.showSimpleAlertController(code, message: nil, actions: [ok], cancel: false, style: .alert)
-    }
-    
-    private func loadTransactions() {
-        
+        view?.startLoading(completion: nil)
+        API<Member>.members(id: code).request(completion: { [weak self] response in
+            self?.view?.stopLoading(completion: {
+                switch response {
+                case .success(let member):
+                    self?.view?.presentMember(member)
+                case .failure(let error):
+                    let action = UIAlertAction(title: "Ok", style: .default) { _ in
+                        self?.view?.runScanner()
+                    }
+                    self?.view?.showSimpleAlertController("Ops",
+                                                          message: error.localizedDescription,
+                                                          actions: [action],
+                                                          cancel: false,
+                                                          style: .alert)
+                }
+            })
+        })
     }
 }
