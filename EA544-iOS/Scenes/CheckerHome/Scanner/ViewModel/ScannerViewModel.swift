@@ -41,6 +41,10 @@ final class ScannerViewModel: ScannerViewDelegate {
             })
         })
     }
+    
+    private func loadTransactions() {
+        
+    }
 }
 
 // MARK: - CheckInDelegate

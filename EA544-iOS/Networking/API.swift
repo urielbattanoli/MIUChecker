@@ -14,6 +14,7 @@ enum API<T: Codable> {
     case login
     case members(id: String)
     case checkIn(id: String)
+    case transactions(id: String)
 }
 
 public struct AppError: Codable, Error, LocalizedError {

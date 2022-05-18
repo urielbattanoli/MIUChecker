@@ -40,6 +40,14 @@
 		BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6F20A32832AB8500DBDE1F /* AppDelegate.swift */; };
 		BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */; };
 		BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6F20AE2832AB8700DBDE1F /* LaunchScreen.storyboard */; };
+		BE8D5C51283580F7001783D6 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C50283580F7001783D6 /* Transaction.swift */; };
+		BE8D5C5528358299001783D6 /* TransactionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C5328358299001783D6 /* TransactionsViewController.swift */; };
+		BE8D5C5628358299001783D6 /* TransactionsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8D5C5428358299001783D6 /* TransactionsViewController.xib */; };
+		BE8D5C59283582EC001783D6 /* TransactionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C58283582EC001783D6 /* TransactionsViewModel.swift */; };
+		BE8D5C5B28358475001783D6 /* CellComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C5A28358475001783D6 /* CellComponent.swift */; };
+		BE8D5C5F2835869E001783D6 /* TransactionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C5D2835869E001783D6 /* TransactionTableViewCell.swift */; };
+		BE8D5C602835869E001783D6 /* TransactionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE8D5C5E2835869E001783D6 /* TransactionTableViewCell.xib */; };
+		BE8D5C62283586CA001783D6 /* AppTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE8D5C61283586CA001783D6 /* AppTableViewCell.swift */; };
 		BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED05DF82832B2CB00493EBF /* AppViewController.swift */; };
 		BED05DFB2832B38500493EBF /* AppNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED05DFA2832B38500493EBF /* AppNavigationController.swift */; };
 		BED05DFE2832B3C300493EBF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED05DFD2832B3C300493EBF /* API.swift */; };
@@ -89,6 +97,14 @@
 		BE6F20AC2832AB8700DBDE1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE6F20AF2832AB8700DBDE1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE6F20B12832AB8700DBDE1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE8D5C50283580F7001783D6 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BE8D5C5328358299001783D6 /* TransactionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewController.swift; sourceTree = "<group>"; };
+		BE8D5C5428358299001783D6 /* TransactionsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionsViewController.xib; sourceTree = "<group>"; };
+		BE8D5C58283582EC001783D6 /* TransactionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionsViewModel.swift; sourceTree = "<group>"; };
+		BE8D5C5A28358475001783D6 /* CellComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CellComponent.swift; sourceTree = "<group>"; };
+		BE8D5C5D2835869E001783D6 /* TransactionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionTableViewCell.swift; sourceTree = "<group>"; };
+		BE8D5C5E2835869E001783D6 /* TransactionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransactionTableViewCell.xib; sourceTree = "<group>"; };
+		BE8D5C61283586CA001783D6 /* AppTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTableViewCell.swift; sourceTree = "<group>"; };
 		BED05DF82832B2CB00493EBF /* AppViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppViewController.swift; sourceTree = "<group>"; };
 		BED05DFA2832B38500493EBF /* AppNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppNavigationController.swift; sourceTree = "<group>"; };
 		BED05DFD2832B3C300493EBF /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -146,6 +162,7 @@
 				BE6A8E302832FC8A00A8F7D3 /* CameraPreview */,
 				BE6A8E232832EA7900A8F7D3 /* Buttons */,
 				BE6A8E102832E4D300A8F7D3 /* InputView */,
+				BE8D5C5A28358475001783D6 /* CellComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -236,6 +253,7 @@
 				BE6A8E52283426D600A8F7D3 /* Member.swift */,
 				BE6A8E5828343C5E00A8F7D3 /* Badge.swift */,
 				BE6A8E542834332800A8F7D3 /* Authorization.swift */,
+				BE8D5C50283580F7001783D6 /* Transaction.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -272,6 +290,34 @@
 			path = "EA544-iOS";
 			sourceTree = "<group>";
 		};
+		BE8D5C5228358280001783D6 /* MemberTransactions */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D5C5C2835866C001783D6 /* TransactionCell */,
+				BE8D5C57283582DF001783D6 /* ViewModel */,
+				BE8D5C5328358299001783D6 /* TransactionsViewController.swift */,
+				BE8D5C5428358299001783D6 /* TransactionsViewController.xib */,
+			);
+			path = MemberTransactions;
+			sourceTree = "<group>";
+		};
+		BE8D5C57283582DF001783D6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D5C58283582EC001783D6 /* TransactionsViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		BE8D5C5C2835866C001783D6 /* TransactionCell */ = {
+			isa = PBXGroup;
+			children = (
+				BE8D5C5D2835869E001783D6 /* TransactionTableViewCell.swift */,
+				BE8D5C5E2835869E001783D6 /* TransactionTableViewCell.xib */,
+			);
+			path = TransactionCell;
+			sourceTree = "<group>";
+		};
 		BED05DF62832B21400493EBF /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +335,7 @@
 				BED05DFA2832B38500493EBF /* AppNavigationController.swift */,
 				BED05DF82832B2CB00493EBF /* AppViewController.swift */,
 				BE6A8E0D2832DE9100A8F7D3 /* AppViewModelDelegate.swift */,
+				BE8D5C61283586CA001783D6 /* AppTableViewCell.swift */,
 			);
 			path = MainClasses;
 			sourceTree = "<group>";
@@ -324,6 +371,7 @@
 		BED05E082832B79500493EBF /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				BE8D5C5228358280001783D6 /* MemberTransactions */,
 				BE6A8E392833090900A8F7D3 /* MemberHome */,
 				BE6A8E282832F3DE00A8F7D3 /* CheckerHome */,
 				BED05E092832B79F00493EBF /* Initial */,
@@ -423,9 +471,11 @@
 				BE6F20B02832AB8700DBDE1F /* LaunchScreen.storyboard in Resources */,
 				BE6F20AD2832AB8700DBDE1F /* Assets.xcassets in Resources */,
 				BE6A8E2D2832F47900A8F7D3 /* ScannerViewController.xib in Resources */,
+				BE8D5C602835869E001783D6 /* TransactionTableViewCell.xib in Resources */,
 				BED05E0D2832B7D200493EBF /* InitialViewController.xib in Resources */,
 				BE6A8E152832E4EC00A8F7D3 /* InputView.xib in Resources */,
 				BE6A8E3D2833091A00A8F7D3 /* MemberViewController.xib in Resources */,
+				BE8D5C5628358299001783D6 /* TransactionsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -479,9 +529,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				BED05DFB2832B38500493EBF /* AppNavigationController.swift in Sources */,
+				BE8D5C59283582EC001783D6 /* TransactionsViewModel.swift in Sources */,
 				BE6A8E1E2832E56800A8F7D3 /* NibDesignable.swift in Sources */,
 				BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */,
 				BE6A8E142832E4EC00A8F7D3 /* InputView.swift in Sources */,
+				BE8D5C5528358299001783D6 /* TransactionsViewController.swift in Sources */,
 				BED05E0F2832B7F100493EBF /* InitialViewModel.swift in Sources */,
 				BE6A8E382833038B00A8F7D3 /* ScannerViewModel.swift in Sources */,
 				BE6A8E272832EC7300A8F7D3 /* CancelButton.swift in Sources */,
@@ -490,6 +542,7 @@
 				BED05DF92832B2CB00493EBF /* AppViewController.swift in Sources */,
 				BE6A8E53283426D600A8F7D3 /* Member.swift in Sources */,
 				BE6A8E5728343A5900A8F7D3 /* Defaults.swift in Sources */,
+				BE8D5C5B28358475001783D6 /* CellComponent.swift in Sources */,
 				BE6A8E0E2832DE9100A8F7D3 /* AppViewModelDelegate.swift in Sources */,
 				BE6A8E1B2832E56800A8F7D3 /* Utils.swift in Sources */,
 				BED05E042832B43900493EBF /* API+Requester.swift in Sources */,
@@ -501,9 +554,12 @@
 				BED05E0C2832B7D200493EBF /* InitialViewController.swift in Sources */,
 				BE6A8E5928343C5E00A8F7D3 /* Badge.swift in Sources */,
 				BED05E022832B42E00493EBF /* API+Request.swift in Sources */,
+				BE8D5C5F2835869E001783D6 /* TransactionTableViewCell.swift in Sources */,
 				BE6A8E1F2832E56800A8F7D3 /* UITextFieldPadding.swift in Sources */,
 				BED05E002832B40300493EBF /* API+Configuration.swift in Sources */,
 				BE6A8E2F2832FAF200A8F7D3 /* UICameraPreviewView.swift in Sources */,
+				BE8D5C62283586CA001783D6 /* AppTableViewCell.swift in Sources */,
+				BE8D5C51283580F7001783D6 /* Transaction.swift in Sources */,
 				BE6A8E2C2832F47900A8F7D3 /* ScannerViewController.swift in Sources */,
 				BE6A8E4228330C0800A8F7D3 /* UIRoundedView.swift in Sources */,
 				BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */,

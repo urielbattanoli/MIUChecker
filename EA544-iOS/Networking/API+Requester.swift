@@ -71,6 +71,9 @@ extension API {
             
             return .failure(AppError.unknown)
         case .failure(let error):
+            if let obj = EmptyResult() as? T {
+                return .success(obj)
+            }
             return .failure(error)
         }
     }

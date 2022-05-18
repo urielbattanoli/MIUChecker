@@ -16,7 +16,7 @@ protocol MemberViewDelegate: AnyObject {
     var qrCodeImage: UIImage? { get }
     var expDate: String { get }
     var showQRCode: Bool { get }
-    
+    var transactionsViewModel: TransactionsViewModel { get }
     func checkIn()
 }
 
@@ -35,6 +35,7 @@ final class MemberViewController: AppViewController {
         controller.present(navigation, animated: true)
     }
     
+    @IBOutlet private weak var transactionsButton: UIButton!
     @IBOutlet private weak var profileImageView: UIImageView!
     @IBOutlet private weak var profileNameLabel: UILabel!
     @IBOutlet private weak var profileIdLabel: UILabel!
@@ -67,9 +68,14 @@ final class MemberViewController: AppViewController {
         profileIdLabel.text = viewModel.profileId
         qrCodeImageView.image = viewModel.qrCodeImage
         expDateLabel.text = viewModel.expDate
+        transactionsButton.isHidden = !viewModel.showQRCode
         qrCodeBGView.isHidden = !viewModel.showQRCode
         buttonsStackView.isHidden = viewModel.showQRCode
         view.backgroundColor = viewModel.showQRCode ? .white : .clear
+    }
+    
+    @IBAction private func transactionsTouched(_ sender: UIButton) {
+        TransactionsViewController.present(in: self, viewModel: viewModel.transactionsViewModel)
     }
     
     @IBAction private func confirmTouched(_ sender: UIButton) {

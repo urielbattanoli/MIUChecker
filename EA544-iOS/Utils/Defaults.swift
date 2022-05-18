@@ -14,11 +14,11 @@ public final class Defaults {
     @UserDefault("token", defaultValue: nil)
     public var token: String?
     
-    @UserDefault("location_id", defaultValue: nil)
-    public var location_id: String?
+    @UserDefault("location_id", defaultValue: "628541c78c24ef569751ccc8")
+    public var location_id: String
     
-    @UserDefault("plan_id", defaultValue: nil)
-    public var plan_id: String?
+    @UserDefault("plan_id", defaultValue: "628541ce8c24ef569751ccc9")
+    public var plan_id: String
 }
 
 @propertyWrapper

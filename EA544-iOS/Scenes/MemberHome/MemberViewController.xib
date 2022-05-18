@@ -18,6 +18,7 @@
                 <outlet property="profileNameLabel" destination="erD-Qt-FT8" id="md1-RV-chY"/>
                 <outlet property="qrCodeBGView" destination="dTz-di-oGU" id="YmJ-pi-4kJ"/>
                 <outlet property="qrCodeImageView" destination="Spr-f8-6gD" id="5UH-J6-7er"/>
+                <outlet property="transactionsButton" destination="bx3-W5-ZHU" id="OlJ-xm-AB4"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -145,11 +146,26 @@
                         </userDefinedRuntimeAttribute>
                     </userDefinedRuntimeAttributes>
                 </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bx3-W5-ZHU">
+                    <rect key="frame" x="315" y="60" width="44" height="44"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="44" id="991-mG-HeV"/>
+                        <constraint firstAttribute="width" constant="44" id="VIq-Fp-jYE"/>
+                    </constraints>
+                    <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                    <state key="normal" image="book" catalog="system"/>
+                    <connections>
+                        <action selector="transactionsTouched:" destination="-1" eventType="touchUpInside" id="UUW-7b-NEm"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="QN1-d9-yWJ" secondAttribute="trailing" constant="16" id="6oa-13-XUM"/>
+                <constraint firstItem="bx3-W5-ZHU" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="16" id="A9u-Wc-UrC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="bx3-W5-ZHU" secondAttribute="trailing" constant="16" id="HnZ-ew-KqW"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="QN1-d9-yWJ" secondAttribute="bottom" constant="16" id="UZp-2l-8rE"/>
                 <constraint firstItem="QN1-d9-yWJ" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ZEE-di-f1r"/>
                 <constraint firstItem="QN1-d9-yWJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="dh0-uI-30b"/>
@@ -158,6 +174,7 @@
         </view>
     </objects>
     <resources>
+        <image name="book" catalog="system" width="128" height="99"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

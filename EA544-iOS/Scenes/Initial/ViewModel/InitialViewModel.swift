@@ -19,8 +19,6 @@ final class InitialViewModel {
     weak var view: InitialViewModelDelegate?
     
     func route() {
-        view?.openCheckerHome()
-        return
         guard let member = Member.current else {
             view?.openLogin()
             return

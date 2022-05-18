@@ -23,6 +23,7 @@ extension API {
         case .login: return "auth/realms/ea544/protocol/openid-connect/token"
         case .members(let id): return "members/\(id)"
         case .checkIn(let id): return "members/\(id)/checkin"
+        case .transactions(let id): return "members/\(id)/checkin"
         }
     }
     
