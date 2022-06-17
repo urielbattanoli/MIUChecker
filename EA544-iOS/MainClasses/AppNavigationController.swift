@@ -9,4 +9,11 @@ import UIKit
 
 final class AppNavigationController: UINavigationController {
     
+    static func defaultIntantiation() -> AppNavigationController {
+        let navigation = AppNavigationController()
+        navigation.isNavigationBarHidden = true
+        navigation.modalPresentationStyle = .fullScreen
+        navigation.modalTransitionStyle = .crossDissolve
+        return navigation
+    }
 }

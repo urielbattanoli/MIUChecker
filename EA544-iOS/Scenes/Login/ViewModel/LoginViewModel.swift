@@ -13,9 +13,14 @@ protocol LoginViewModelDelegate: AppViewModelDelegate {
     func showPasswordErrorMessage(_ message: String)
 }
 
+protocol LoginNavigation: AnyObject {
+    func goToHome()
+}
+
 final class LoginViewModel: LoginViewDelegate {
     
     weak var view: LoginViewModelDelegate?
+    weak var navigation: LoginNavigation?
     var email = ""
     var password = ""
     
@@ -64,7 +69,7 @@ final class LoginViewModel: LoginViewDelegate {
                 switch response {
                 case .success(let member):
                     Member.current = member
-                    self?.view?.dismiss()
+                    self?.navigation?.goToHome()
                 case .failure(let error):
                     self?.view?.error(message: error.localizedDescription)
                 }

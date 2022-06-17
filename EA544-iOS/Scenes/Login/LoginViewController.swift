@@ -19,17 +19,8 @@ protocol LoginViewDelegate: AnyObject {
 
 final class LoginViewController: AppViewController {
     
-    static func present(in controller: UIViewController, viewModel: LoginViewDelegate) {
-        let view = LoginViewController(viewModel: viewModel)
-        viewModel.view = view
-        if let nav = controller.navigationController {
-            nav.pushViewController(view, animated: true)
-        } else {
-            let nav = UINavigationController(rootViewController: view)
-            nav.modalPresentationStyle = .fullScreen
-            nav.modalTransitionStyle = .crossDissolve
-            controller.present(nav, animated: true)
-        }
+    static func instantiate(viewModel: LoginViewDelegate) -> LoginViewController {
+        return LoginViewController(viewModel: viewModel)
     }
     
     @IBOutlet private weak var emailInputView: InputView!

@@ -13,10 +13,18 @@ protocol NibRegistrableView: AnyObject {
 }
 
 extension NibRegistrableView {
-    static var nibName: String { return Utils.className(for: self) }
-    static var reuseId: String { return Utils.className(for: self) }
+    static var nibName: String { return className(for: self) }
+    static var reuseId: String { return className(for: self) }
     static var nib: UINib { return UINib(nibName: nibName, bundle: Bundle(for: self)) }
     static func instantiateFromNib() -> Any? { return self.nib.instantiate(withOwner: nil, options: nil).first }
+    
+    private static func className(for _class: AnyClass) -> String {
+        let str = String(describing: type(of: _class))
+        guard str.hasSuffix(".Type") else {
+            return str
+        }
+        return String(str[..<str.index(str.endIndex, offsetBy: -5)])
+    }
 }
 
 typealias NibRegistrableTableViewCell = NibRegistrableView & UITableViewCell

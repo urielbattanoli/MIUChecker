@@ -9,14 +9,6 @@ import Foundation
 
 struct Utils {
     
-    static func className(for _class: AnyClass) -> String {
-        let str = String(describing: type(of: _class))
-        guard str.hasSuffix(".Type") else {
-            return str
-        }
-        return String(str[..<str.index(str.endIndex, offsetBy: -5)])
-    }
-    
     static func formatter() -> DateFormatter {
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current

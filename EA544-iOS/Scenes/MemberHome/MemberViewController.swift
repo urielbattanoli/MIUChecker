@@ -22,17 +22,8 @@ protocol MemberViewDelegate: AnyObject {
 
 final class MemberViewController: AppViewController {
     
-    static func present(in controller: UIViewController, viewModel: MemberViewDelegate) {
-        let view = MemberViewController(viewModel: viewModel)
-        viewModel.view = view
-        
-        let navigation = AppNavigationController(rootViewController: view)
-        navigation.isNavigationBarHidden = true
-        if viewModel.showQRCode {
-            navigation.modalPresentationStyle = .fullScreen
-            navigation.modalTransitionStyle = .crossDissolve
-        }
-        controller.present(navigation, animated: true)
+    static func instantiate(viewModel: MemberViewDelegate) -> MemberViewController {
+        return MemberViewController(viewModel: viewModel)
     }
     
     @IBOutlet private weak var transactionsButton: UIButton!

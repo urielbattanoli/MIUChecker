@@ -17,16 +17,8 @@ protocol ScannerViewDelegate: AnyObject {
 
 final class ScannerViewController: AppViewController {
     
-    static func present(in controller: UIViewController, viewModel: ScannerViewDelegate) {
-        let view = ScannerViewController(viewModel: viewModel)
-        viewModel.view = view
-        
-        let navigation = AppNavigationController(rootViewController: view)
-        navigation.isNavigationBarHidden = true
-        navigation.modalPresentationStyle = .fullScreen
-        navigation.modalTransitionStyle = .crossDissolve
-        
-        controller.present(navigation, animated: true)
+    static func instantiate(viewModel: ScannerViewDelegate) -> ScannerViewController {
+        return ScannerViewController(viewModel: viewModel)
     }
     
     @IBOutlet private var viewCameraPreview: UICameraPreviewView!
@@ -80,15 +72,11 @@ final class ScannerViewController: AppViewController {
         captureSession.addInput(videoInput)
         captureSession.addOutput(metadataOutput)
         metadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
-        metadataOutput.metadataObjectTypes = [.qr]
+        metadataOutput.metadataObjectTypes = [.code128]
         
         viewCameraPreview.previewLayer.session = captureSession
         viewCameraPreview.previewLayer.videoGravity = .resizeAspectFill
         captureSession.startRunning()
-    }
-    
-    private func found(code: String) {
-        viewModel.verifyCode(code)
     }
     
     private func failed() {
@@ -110,7 +98,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
               let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
               let stringValue = readableObject.stringValue else { return }
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        found(code: stringValue)
+        viewModel.verifyCode(stringValue)
     }
 }
 
@@ -125,9 +113,5 @@ extension ScannerViewController: ScannerViewModelDelegate {
         if captureSession?.isRunning == false {
             captureSession.startRunning()
         }
-    }
-    
-    func presentMember(_ viewModel: MemberViewModel) {
-        MemberViewController.present(in: self, viewModel: viewModel)
     }
 }

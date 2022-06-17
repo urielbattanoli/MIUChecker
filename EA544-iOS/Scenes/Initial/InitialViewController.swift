@@ -9,6 +9,10 @@ import UIKit
 
 final class InitialViewController: AppViewController {
     
+    static func instantiate(viewModel: InitialViewModel) -> InitialViewController {
+        return InitialViewController(viewModel: viewModel)
+    }
+    
     private var viewModel: InitialViewModel!
     
     override var preferredStatusBarStyle: UIStatusBarStyle {
@@ -18,7 +22,6 @@ final class InitialViewController: AppViewController {
     convenience init(viewModel: InitialViewModel) {
         self.init(nibName: .none, bundle: Bundle(for: Self.self))
         self.viewModel = viewModel
-        self.viewModel.view = self
     }
     
     override func viewDidLoad() {
@@ -29,6 +32,7 @@ final class InitialViewController: AppViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
         viewModel.route()
     }
     
@@ -41,21 +45,5 @@ final class InitialViewController: AppViewController {
                          using: { [weak self] _ in
                             self?.viewModel.logout()
         })
-    }
-}
-
-// MARK: - InitialViewModelDelegate
-extension InitialViewController: InitialViewModelDelegate {
-    
-    func openCheckerHome() {
-        ScannerViewController.present(in: self, viewModel: ScannerViewModel())
-    }
-    
-    func openMemberHome(_ member: Member) {
-        MemberViewController.present(in: self, viewModel: MemberViewModel(member: member))
-    }
-    
-    func openLogin() {
-        LoginViewController.present(in: self, viewModel: LoginViewModel())
     }
 }

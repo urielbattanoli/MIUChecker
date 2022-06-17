@@ -7,26 +7,29 @@
 
 import Foundation
 
-protocol InitialViewModelDelegate: AppViewModelDelegate {
+protocol InitialNavigation: AnyObject {
     
     func openCheckerHome()
     func openMemberHome(_ member: Member)
     func openLogin()
+    func logout()
 }
 
 final class InitialViewModel {
     
-    weak var view: InitialViewModelDelegate?
+    weak var navigation: InitialNavigation?
     
     func route() {
+        navigation?.openCheckerHome()
+        return
         guard let member = Member.current else {
-            view?.openLogin()
+            navigation?.openLogin()
             return
         }
         if member.isLocation {
-            view?.openCheckerHome()
+            navigation?.openCheckerHome()
         } else {
-            view?.openMemberHome(member)
+            navigation?.openMemberHome(member)
         }
     }
     

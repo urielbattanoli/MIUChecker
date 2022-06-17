@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		B7A872366C3BC43B62362860 /* Pods_EA544_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 642E4A4007C4C1D2F0AABD1F /* Pods_EA544_iOS.framework */; };
+		BE682633285BCC5200CF7838 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE682632285BCC5200CF7838 /* Coordinator.swift */; };
+		BE682635285BCCF700CF7838 /* InitialCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE682634285BCCF700CF7838 /* InitialCoordinator.swift */; };
+		BE682639285C048400CF7838 /* ScannerCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE682638285C048400CF7838 /* ScannerCoordinator.swift */; };
+		BE68263B285C0CB100CF7838 /* LoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE68263A285C0CB100CF7838 /* LoginCoordinator.swift */; };
 		BE6A8E042832DD3100A8F7D3 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */; };
 		BE6A8E052832DD3100A8F7D3 /* LoginViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */; };
 		BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6A8E0B2832DD7500A8F7D3 /* LoginViewModel.swift */; };
@@ -63,6 +67,10 @@
 /* Begin PBXFileReference section */
 		642E4A4007C4C1D2F0AABD1F /* Pods_EA544_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_EA544_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		920F2188CCBED7AA2B71C79B /* Pods-EA544-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-EA544-iOS.release.xcconfig"; path = "Target Support Files/Pods-EA544-iOS/Pods-EA544-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		BE682632285BCC5200CF7838 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		BE682634285BCCF700CF7838 /* InitialCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitialCoordinator.swift; sourceTree = "<group>"; };
+		BE682638285C048400CF7838 /* ScannerCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerCoordinator.swift; sourceTree = "<group>"; };
+		BE68263A285C0CB100CF7838 /* LoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginCoordinator.swift; sourceTree = "<group>"; };
 		BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LoginViewController.xib; sourceTree = "<group>"; };
 		BE6A8E0B2832DD7500A8F7D3 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
@@ -144,6 +152,7 @@
 				BE6A8E062832DD4000A8F7D3 /* ViewModel */,
 				BE6A8E022832DD3100A8F7D3 /* LoginViewController.swift */,
 				BE6A8E032832DD3100A8F7D3 /* LoginViewController.xib */,
+				BE68263A285C0CB100CF7838 /* LoginCoordinator.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -209,6 +218,7 @@
 				BE6A8E362833037F00A8F7D3 /* ViewModel */,
 				BE6A8E2A2832F47900A8F7D3 /* ScannerViewController.swift */,
 				BE6A8E2B2832F47900A8F7D3 /* ScannerViewController.xib */,
+				BE682638285C048400CF7838 /* ScannerCoordinator.swift */,
 			);
 			path = Scanner;
 			sourceTree = "<group>";
@@ -336,6 +346,7 @@
 				BED05DF82832B2CB00493EBF /* AppViewController.swift */,
 				BE6A8E0D2832DE9100A8F7D3 /* AppViewModelDelegate.swift */,
 				BE8D5C61283586CA001783D6 /* AppTableViewCell.swift */,
+				BE682632285BCC5200CF7838 /* Coordinator.swift */,
 			);
 			path = MainClasses;
 			sourceTree = "<group>";
@@ -386,6 +397,7 @@
 				BED05E102832B87C00493EBF /* ViewModel */,
 				BED05E0A2832B7D200493EBF /* InitialViewController.swift */,
 				BED05E0B2832B7D200493EBF /* InitialViewController.xib */,
+				BE682634285BCCF700CF7838 /* InitialCoordinator.swift */,
 			);
 			path = Initial;
 			sourceTree = "<group>";
@@ -530,6 +542,7 @@
 			files = (
 				BED05DFB2832B38500493EBF /* AppNavigationController.swift in Sources */,
 				BE8D5C59283582EC001783D6 /* TransactionsViewModel.swift in Sources */,
+				BE682635285BCCF700CF7838 /* InitialCoordinator.swift in Sources */,
 				BE6A8E1E2832E56800A8F7D3 /* NibDesignable.swift in Sources */,
 				BE6A8E252832EA8500A8F7D3 /* MainButton.swift in Sources */,
 				BE6A8E142832E4EC00A8F7D3 /* InputView.swift in Sources */,
@@ -548,6 +561,7 @@
 				BED05E042832B43900493EBF /* API+Requester.swift in Sources */,
 				BE6A8E4928334D8700A8F7D3 /* QRCodeGenerator.swift in Sources */,
 				BE6A8E552834332800A8F7D3 /* Authorization.swift in Sources */,
+				BE682633285BCC5200CF7838 /* Coordinator.swift in Sources */,
 				BE6A8E4B2833503900A8F7D3 /* UIImageView.swift in Sources */,
 				BE6A8E3C2833091A00A8F7D3 /* MemberViewController.swift in Sources */,
 				BE6A8E1D2832E56800A8F7D3 /* StringExtension.swift in Sources */,
@@ -563,10 +577,12 @@
 				BE6A8E2C2832F47900A8F7D3 /* ScannerViewController.swift in Sources */,
 				BE6A8E4228330C0800A8F7D3 /* UIRoundedView.swift in Sources */,
 				BE6A8E212832E5EE00A8F7D3 /* ViewExtension.swift in Sources */,
+				BE682639285C048400CF7838 /* ScannerCoordinator.swift in Sources */,
 				BED05DFE2832B3C300493EBF /* API.swift in Sources */,
 				BE6A8E0C2832DD7500A8F7D3 /* LoginViewModel.swift in Sources */,
 				BE6F20A42832AB8500DBDE1F /* AppDelegate.swift in Sources */,
 				BED05E072832B56400493EBF /* Logger.swift in Sources */,
+				BE68263B285C0CB100CF7838 /* LoginCoordinator.swift in Sources */,
 				BE6A8E042832DD3100A8F7D3 /* LoginViewController.swift in Sources */,
 				BE6A8E402833096B00A8F7D3 /* MemberViewModel.swift in Sources */,
 			);
@@ -708,9 +724,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DXGTJAG2UY;
+				DEVELOPMENT_TEAM = 4NRYRR94WS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EA544-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MIU Scanner";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need this authorization";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -725,7 +742,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "miu.edu.EA544-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = miu.edu.MIUScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -741,9 +758,10 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = DXGTJAG2UY;
+				DEVELOPMENT_TEAM = 4NRYRR94WS;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "EA544-iOS/Resources/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "MIU Scanner";
 				INFOPLIST_KEY_NSCameraUsageDescription = "We need this authorization";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -758,7 +776,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "miu.edu.EA544-iOS";
+				PRODUCT_BUNDLE_IDENTIFIER = miu.edu.MIUScanner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
