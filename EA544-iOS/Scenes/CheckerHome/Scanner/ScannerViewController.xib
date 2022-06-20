@@ -58,6 +58,38 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="d5n-TX-yOb" customClass="UIRoundedView" customModule="EA544_iOS" customModuleProvider="target">
+                    <rect key="frame" x="16" y="792" width="382" height="50"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yAl-Pe-QTD">
+                            <rect key="frame" x="0.0" y="0.0" width="382" height="50"/>
+                            <color key="backgroundColor" red="0.058823529409999999" green="0.75231991009999999" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="bpD-wW-Sta"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" title="Sync Now">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="syncButtonTouched:" destination="-1" eventType="touchUpInside" id="Fgj-UM-R0S"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="yAl-Pe-QTD" firstAttribute="leading" secondItem="d5n-TX-yOb" secondAttribute="leading" id="1t8-Vv-hue"/>
+                        <constraint firstAttribute="bottom" secondItem="yAl-Pe-QTD" secondAttribute="bottom" id="DI6-Zw-vgH"/>
+                        <constraint firstItem="yAl-Pe-QTD" firstAttribute="top" secondItem="d5n-TX-yOb" secondAttribute="top" id="Lru-dG-2Kf"/>
+                        <constraint firstAttribute="trailing" secondItem="yAl-Pe-QTD" secondAttribute="trailing" id="cSK-qa-T62"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="radius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -68,10 +100,13 @@
                 <constraint firstItem="OA8-U6-K23" firstAttribute="top" secondItem="ZWk-xo-evi" secondAttribute="bottom" constant="24" id="Lt5-wz-DL0"/>
                 <constraint firstItem="OA8-U6-K23" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cqm-Ya-GDf"/>
                 <constraint firstItem="983-xe-sUL" firstAttribute="top" secondItem="OA8-U6-K23" secondAttribute="bottom" constant="24" id="fMf-0o-gvL"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="d5n-TX-yOb" secondAttribute="bottom" constant="20" id="h7S-M1-4t0"/>
                 <constraint firstItem="983-xe-sUL" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="jSp-q6-KbO"/>
+                <constraint firstAttribute="trailing" secondItem="d5n-TX-yOb" secondAttribute="trailing" constant="16" id="pfI-GO-Q2t"/>
+                <constraint firstItem="d5n-TX-yOb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="16" id="xXb-zU-lOU"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="983-xe-sUL" secondAttribute="trailing" constant="16" id="yvP-Io-eEu"/>
             </constraints>
-            <point key="canvasLocation" x="139" y="103"/>
+            <point key="canvasLocation" x="137.68115942028987" y="102.45535714285714"/>
         </view>
     </objects>
     <resources>

@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol LoginDelegate: AnyObject {
+    func didLogin()
+}
+
 final class LoginCoordinator: Coordinator, LoginNavigation {
     
     weak var parentCoordinator: Coordinator?
@@ -14,9 +18,11 @@ final class LoginCoordinator: Coordinator, LoginNavigation {
     var children: [Coordinator] = []
     
     var navigationController: UINavigationController
+    private weak var delegate: LoginDelegate?
     
-    init(navigationController: UINavigationController) {
+    init(navigationController: UINavigationController, delegate: LoginDelegate? = nil) {
         self.navigationController = navigationController
+        self.delegate = delegate
     }
     
     func start() {
@@ -27,7 +33,8 @@ final class LoginCoordinator: Coordinator, LoginNavigation {
         navigationController.pushViewController(vc, animated: true)
     }
     
-    func goToHome() {
+    func didLogin() {
+        delegate?.didLogin()
         navigationController.dismiss(animated: true)
         parentCoordinator?.childDidFinish(self)
     }

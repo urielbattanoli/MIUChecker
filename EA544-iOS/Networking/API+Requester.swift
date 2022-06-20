@@ -10,7 +10,7 @@ import Alamofire
 
 extension API {
     
-    private func logIfNeeded(params: JSON? = nil, response: AFDataResponse<Data>) {
+    private func logIfNeeded(params: Any? = nil, response: AFDataResponse<Data>) {
         Logger.log(.networking, info: "SENT (\(self.method.rawValue): \(self.url)) \nHEADERS:\(headers.dictionary)", object: "\n\(String(describing: params))")
         if let data = response.data {
             if data.count > 1024 * 1024 {
@@ -21,7 +21,7 @@ extension API {
         }
     }
     
-    private func parse(params: JSON?, response: AFDataResponse<Data>) -> (Swift.Result<T, Error>) {
+    private func parse(response: AFDataResponse<Data>) -> (Swift.Result<T, Error>) {
         let statusCode = response.response?.statusCode ?? 0
         
         let decoder = JSONDecoder()
@@ -71,50 +71,61 @@ extension API {
             
             return .failure(AppError.unknown)
         case .failure(let error):
-            if let obj = EmptyResult() as? T {
-                return .success(obj)
-            }
             return .failure(error)
         }
     }
+    
+    @discardableResult
+    func request(params: JSON? = nil, progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
+        let req = AF.request(url,
+                             method: method,
+                             parameters: params,
+                             encoding: encoding,
+                             headers: headers)
+        return request(request: req,
+                       params: params as Any,
+                       progress: progress,
+                       completion: completion)
+    }
+    
+    @discardableResult
+    func request(params: [JSON], progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
+        let data = try? JSONSerialization.data(withJSONObject: params)
+        var req = URLRequest(url: url)
+        req.method = method
+        req.httpBody = data
+        req.headers = headers
+        return request(request: AF.request(req),
+                       params: params,
+                       progress: progress,
+                       completion: completion)
+    }
         
     @discardableResult
-    public func request(params: JSON? = nil, timeout: TimeInterval = 60, progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
-        
-        var request = URLRequest(url: url)
-        request.allHTTPHeaderFields = headers.dictionary
-        request.timeoutInterval = timeout
-        
-        let alamofireRequest = AF.request(url,
-                                          method: method,
-                                          parameters: params,
-                                          encoding: encoding,
-                                          headers: headers)
+    private func request(request: DataRequest, params: Any, progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
         
         guard let progress = progress else {
-            alamofireRequest
+            request
                 .validate(statusCode: 200...600)
                 .responseData(
                     completionHandler: { response in
                         self.logIfNeeded(params: params, response: response)
-                        print(response)
                         if let completion = completion {
-                            let result = self.parse(params: params, response: response)
+                            let result = self.parse(response: response)
                             DispatchQueue.main.async { completion(result) }
                         }
                     }
                 )
             
-            return alamofireRequest
+            return request
         }
         
-        alamofireRequest
+        request
             .downloadProgress(queue: .main, closure: { prog in
                 progress(prog)
             })
         
-        return alamofireRequest
-        
+        return request
     }
     
     public func upload(data: Data, completion: ((Swift.Result<T, Error>) -> Void)? = nil) {
@@ -130,7 +141,7 @@ extension API {
             .responseData { response in
                 self.logIfNeeded(params: nil, response: response)
                 if let completion = completion {
-                    let result = self.parse(params: nil, response: response)
+                    let result = self.parse(response: response)
                     DispatchQueue.main.async { completion(result) }
                 }
             }

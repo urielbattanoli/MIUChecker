@@ -24,11 +24,11 @@ struct Utils {
 
 extension Encodable {
     
-    public func toDictionary() -> [String: Any] {
+    public func toDictionary() -> JSON {
         do {
             let data = try JSONEncoder().encode(self)
             let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments)
-            return json as? [String: Any] ?? [:]
+            return json as? JSON ?? [:]
         } catch (let error) {
             print(Self.self)
             print(error)

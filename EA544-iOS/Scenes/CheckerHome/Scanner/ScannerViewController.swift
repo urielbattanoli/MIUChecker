@@ -13,6 +13,7 @@ protocol ScannerViewDelegate: AnyObject {
     var dailyTotal: Int { get }
     
     func verifyCode(_ code: String)
+    func sync()
 }
 
 final class ScannerViewController: AppViewController {
@@ -86,6 +87,10 @@ final class ScannerViewController: AppViewController {
                                   cancel: false,
                                   style: .alert)
         captureSession = nil
+    }
+    
+    @IBAction private func syncButtonTouched(_ sender: UIButton) {
+        viewModel.sync()
     }
 }
 

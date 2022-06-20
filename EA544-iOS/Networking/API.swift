@@ -7,7 +7,7 @@
 
 import Foundation
 
-typealias JSON = [String : Any]
+public typealias JSON = [String : Any]
 
 enum API<T: Codable> {
     
@@ -15,6 +15,8 @@ enum API<T: Codable> {
     case members(id: String)
     case checkIn(id: String)
     case transactions(id: String)
+    case saveAttendances
+    case getAttendances
 }
 
 public struct AppError: Codable, Error, LocalizedError {

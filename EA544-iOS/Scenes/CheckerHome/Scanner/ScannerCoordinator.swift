@@ -10,20 +10,18 @@ import UIKit
 final class ScannerCoordinator: Coordinator, ScannerNavigation {
     
     weak var parentCoordinator: Coordinator?
-    
     var children: [Coordinator] = []
-    
     var navigationController: UINavigationController
+    private let viewModel = ScannerViewModel()
     
     init(navigationController: UINavigationController) {
         self.navigationController = navigationController
     }
     
     func start() {
-        let vm = ScannerViewModel()
-        let vc = ScannerViewController.instantiate(viewModel: vm)
-        vm.view = vc
-        vm.navigation = self
+        let vc = ScannerViewController.instantiate(viewModel: viewModel)
+        viewModel.view = vc
+        viewModel.navigation = self
         navigationController.pushViewController(vc, animated: true)
     }
     
@@ -31,6 +29,15 @@ final class ScannerCoordinator: Coordinator, ScannerNavigation {
         let vc = MemberViewController.instantiate(viewModel: viewModel)
         let navigation = AppNavigationController(rootViewController: vc)
         navigation.isNavigationBarHidden = true
+        navigationController.present(navigation, animated: true)
+    }
+    
+    func presentLogin() {
+        let navigation = AppNavigationController()
+        let coordinator = LoginCoordinator(navigationController: navigation, delegate: viewModel)
+        children.append(coordinator)
+        coordinator.parentCoordinator = self
+        coordinator.start()
         navigationController.present(navigation, animated: true)
     }
 }

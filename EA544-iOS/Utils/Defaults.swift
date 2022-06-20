@@ -19,6 +19,9 @@ public final class Defaults {
     
     @UserDefault("plan_id", defaultValue: "628541ce8c24ef569751ccc9")
     public var plan_id: String
+    
+    @UserDefault("attendances", defaultValue: [])
+    public var attendances: [JSON]
 }
 
 @propertyWrapper

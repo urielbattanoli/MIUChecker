@@ -10,6 +10,6 @@ import Foundation
 extension API {
     
     static var baseURL: URL! {
-        return URL(string: "http://10.200.2.46:8080/")
+        return URL(string: "https://registrations.cs.miu.edu/")
     }
 }
