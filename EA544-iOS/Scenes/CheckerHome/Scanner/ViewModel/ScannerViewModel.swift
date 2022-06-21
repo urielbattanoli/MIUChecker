@@ -23,7 +23,11 @@ final class ScannerViewModel: ScannerViewDelegate {
     weak var navigation: ScannerNavigation?
     private let formatter: DateFormatter
     
-    var dailyTotal: Int = 0
+    var dailyTotal: Int = Defaults.shared.attendances.count {
+        didSet {
+            view?.update()
+        }
+    }
     
     init() {
         let df = DateFormatter()
@@ -40,7 +44,6 @@ final class ScannerViewModel: ScannerViewDelegate {
         DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
             self.view?.runScanner()
         }
-        view?.update()
     }
     
     private func loadTransactions() {
@@ -56,12 +59,23 @@ final class ScannerViewModel: ScannerViewDelegate {
     }
     
     private func uploadAttedances() {
-            view?.startLoading(completion: nil)
-            let attendances = Defaults.shared.attendances
-            API<EmptyResult>.saveAttendances.request(params: attendances, completion: { [weak self] result in
+        let attendances = Defaults.shared.attendances
+        guard attendances.count > 0 else {
+            view?.showSimpleAlertController("Ops!",
+                                            message: "There aren't attendances to send",
+                                            actions: nil,
+                                            cancel: false,
+                                            style: .alert)
+            return
+        }
+        view?.startLoading(completion: {
+            let query = URLQueryItem(name: "batch-insert", value: "true")
+            API<EmptyResult>.saveAttendances.request(params: attendances, queries: [query], completion: { [weak self] result in
                 self?.view?.stopLoading(completion: {
                     switch result {
                     case .success:
+                        self?.dailyTotal = 0
+                        Defaults.shared.attendances = []
                         self?.view?.showSimpleAlertController("Success!",
                                                               message: "All the saved attendances were uploaded to the server",
                                                               actions: nil,
@@ -80,6 +94,7 @@ final class ScannerViewModel: ScannerViewDelegate {
                     }
                 })
             })
+        })
     }
 }
 

@@ -101,9 +101,11 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
         captureSession.stopRunning()
         guard let metadataObject = metadataObjects.first,
               let readableObject = metadataObject as? AVMetadataMachineReadableCodeObject,
-              let stringValue = readableObject.stringValue else { return }
+              let code = readableObject.stringValue else { return }
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
-        viewModel.verifyCode(stringValue)
+        let sound = code == "1080000036" ? 1025 : 1103
+        AudioServicesPlayAlertSound(SystemSoundID(sound))
+        viewModel.verifyCode(code)
     }
 }
 
@@ -111,7 +113,7 @@ extension ScannerViewController: AVCaptureMetadataOutputObjectsDelegate {
 extension ScannerViewController: ScannerViewModelDelegate {
     
     func update() {
-        badgesReadLabel.text = "\(viewModel.dailyTotal) badges read today"
+        badgesReadLabel.text = "\(viewModel.dailyTotal) student ids read\n\nTap the button below to send them to server"
     }
     
     func runScanner() {

@@ -23,8 +23,8 @@ extension API {
         case .members(let id): return "members/\(id)"
         case .checkIn(let id): return "members/\(id)/checkin"
         case .transactions(let id): return "members/\(id)/checkin"
-        case .saveAttendances: return "v1/api/attendance-records?batch-insert=true"
-        case .getAttendances: return "v1/api/attendance-records?fetch-all=true" 
+        case .saveAttendances: return "v1/api/attendance-records"
+        case .getAttendances: return "v1/api/attendance-records"
         }
     }
     
@@ -37,6 +37,7 @@ extension API {
     
     var encoding: ParameterEncoding {
         switch self {
+        case .getAttendances: return URLEncoding.default
         default: return JSONEncoding.default
         }
     }

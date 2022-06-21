@@ -89,9 +89,11 @@ extension API {
     }
     
     @discardableResult
-    func request(params: [JSON], progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
+    func request(params: [JSON], queries: [URLQueryItem]? = nil, progress: ((Progress) -> Void)? = nil, completion: ((Swift.Result<T, Error>) -> Void)? = nil) -> DataRequest {
         let data = try? JSONSerialization.data(withJSONObject: params)
-        var req = URLRequest(url: url)
+        var urlComp = URLComponents(url: url, resolvingAgainstBaseURL: false)
+        urlComp?.queryItems = queries
+        var req = URLRequest(url: urlComp!.url!)
         req.method = method
         req.httpBody = data
         req.headers = headers

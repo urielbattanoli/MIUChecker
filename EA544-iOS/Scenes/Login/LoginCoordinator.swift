@@ -34,8 +34,9 @@ final class LoginCoordinator: Coordinator, LoginNavigation {
     }
     
     func didLogin() {
-        delegate?.didLogin()
-        navigationController.dismiss(animated: true)
+        navigationController.dismiss(animated: true) {
+            self.delegate?.didLogin()
+        }
         parentCoordinator?.childDidFinish(self)
     }
 }
